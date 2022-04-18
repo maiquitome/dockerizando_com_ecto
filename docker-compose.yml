@@ -1,0 +1,8 @@
+version: "3" # versão do docker-compose
+services: # serviços que precisamos colocar em conteiner
+  # e um desses serviços é a nossa aplicação.
+  app: # nome da nossa aplicação, pode ser qualquer nome, nesse caso vamos dar o nome de app
+    build: 
+      context: . # context é o diretório onde a gente está
+    ports: # pra executar o docker run precisamos passar a porta
+      - "8080:4000" # o `-` no yml significa que é um array
