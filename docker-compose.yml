@@ -7,3 +7,15 @@ services: # serviços que precisamos colocar em conteiner
     command: /bin/sh docker_dev_start.sh # executa o script do arquivo docker_dev_start.sh
     ports: # pra executar o docker run precisamos passar a porta
       - "8080:4000" # o `-` no yml significa que é um array
+    depends_on:
+      - db # nosso app depende do db para funcionar
+    links:
+      - db
+  # configuração do banco de dados
+  db: 
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - "5432:5432"
