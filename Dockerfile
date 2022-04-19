@@ -23,6 +23,3 @@ RUN mix do deps.get, deps.compile
 # A instrução EXPOSE atua apenas como uma plataforma de informações (como Documentação) entre o criador da imagem Docker e o indivíduo que executa o Container.
 # Syntax: EXPOSE <port>/<protocol>
 EXPOSE 4000
-
-# executando o servidor
-CMD ["mix", "phx.server"]
